@@ -39,6 +39,20 @@ app.use(
 // Cloudinary connection
 cloudinaryConnect();
 
+app.get("/", (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Media Docs backend is running",
+  });
+});
+
+app.get("/health", (_req, res) => {
+  res.status(200).json({
+    success: true,
+    uptime: process.uptime(),
+  });
+});
+
 app.use("/api/v1/files", UploadRoutes);
 app.use("/api/v1/auth", userRoutes);
 // Serve static files
