@@ -12,6 +12,9 @@ build/
 coverage/
 *.tsbuildinfo
 
+# Uploaded/generated files
+controllers/files/
+
 # Logs
 logs/
 *.log
